@@ -5,7 +5,9 @@ export async function getHomePage() {
     const query = groq`
         *[_type == "homePage"][0] {
             title,
-            body
+            "projects": *[_type == "project"] {
+                ...
+            }
         }
     `
 

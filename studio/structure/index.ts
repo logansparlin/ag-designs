@@ -17,16 +17,16 @@ const Structure = () => (
                 .icon(BiHomeAlt),
             S.divider(),
             S.listItem()
-                .title('Pages')
-                .schemaType('page')
+                .title('Projects')
+                .schemaType('project')
                 .icon(BiBookContent)
                 .child(
-                    S.documentTypeList('page')
-                        .title('Page')
+                    S.documentTypeList('project')
+                        .title('Project')
                         .child(documentId => (
                             S.document()
                                 .documentId(documentId)
-                                .schemaType('page')
+                                .schemaType('project')
                         ))
                 )
         ])

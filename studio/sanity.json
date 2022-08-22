@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "d7x3ay0b",
+    "projectId": "snpl8i9s",
     "dataset": "production"
   },
   "project": {
-    "name": "Garden Variety",
+    "name": "AG Designs",
     "basePath": "/studio"
   },
   "plugins": [
