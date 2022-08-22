@@ -44,7 +44,7 @@ const ProjectList = ({ projects }) => {
       {projects.map(project => {
         const url = urlFor(project.images[0].image).auto('format').url();
         return (
-          <Box key={project._id} as="a" cursor="pointer">
+          <Box key={project._id} as="a" cursor="pointer" href={`/project/${project.slug.current}`}>
             <StyledCard>
               <Box width="100%" height="0" pb="70%" position="relative" bg="#222">
                 <Image src={url} layout="fill" objectFit="cover" priority />

@@ -19,12 +19,19 @@ export async function getHomePage() {
     }
 }
 
-export async function getPage(slug: string) {
+export async function getProject(slug: string) {
     const query = groq`
-        *[_type == "page" && slug.current match '${slug}'][0] {
-            title,
+        *[_type == "project" && slug.current match '${slug}'][0] {
             slug,
-            body
+            title,
+            description,
+            images[] {
+                ...
+            },
+            location,
+            clientType,
+            scope,
+            services
         }
     `
 
@@ -35,3 +42,18 @@ export async function getPage(slug: string) {
         query
     }
 }
+
+export async function getProjectPaths() {
+    const query = groq`
+          *[_type == "project" && defined(slug)] {
+              "params": { "slug": slug.current }
+          }
+      `;
+  
+    const data = await sanityClient.fetch(query);
+  
+    return {
+      data,
+      query
+    };
+  }
