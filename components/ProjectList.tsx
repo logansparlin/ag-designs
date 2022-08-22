@@ -42,7 +42,6 @@ const ProjectList = ({ projects }) => {
   return (
     <Box display="grid" gridGap={["48px", null, "32px"]} gridTemplateColumns={["repeat(1, 1fr)", null, "repeat(3, 1fr)"]} py={["48px", null, "100px"]}>
       {projects.map(project => {
-        console.log(project.images)
         const url = urlFor(project.images[0].image).auto('format').url();
         const lqip = project.images[0].metadata.lqip;
         return (

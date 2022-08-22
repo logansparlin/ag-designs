@@ -72,21 +72,20 @@ const Project = ({ pageData }) => {
           <Link href="/">+ Close Project</Link>
         </CloseLink>
       </Box>
-      <Box width="100%" display="flex" height="100vh" as="main" mb="100px" flexWrap="wrap">
-        <Box width="50%" position="relative" height="100%" overflow="scroll">
+      <Box width="100%" display="flex" height={["auto", null, "100vh"]} as="main" mb="100px" flexWrap="wrap">
+        <Box width={["100%", null, "50%"]} position="relative" height={["auto", null, "100%"]} overflow="scroll" style={{ whiteSpace: 'nowrap'}}>
           {images.map(image => {
             const url = urlFor(image.image).auto('format').url();
             const lqip = image.metadata.lqip;
             const dimensions = getImageDimensions(image.image);
-            console.log(dimensions)
             return (
-              <Box width="100%" height="0" pb={`${100 * (dimensions.height / dimensions.width)}%`} position="relative" style={{ willChange: 'auto'}}>
+              <Box display={["inline-block", null, "block"]} width="100%" height="0" pb={["80%", null, `${100 * (dimensions.height / dimensions.width)}%`]} position="relative" style={{ willChange: 'auto'}}>
                 <Image layout="fill" src={url} objectFit="cover" placeholder="blur" blurDataURL={lqip} />
               </Box>
             )
           })}
         </Box>
-        <Box width="50%" p={["20px", null, "32px"]} display="flex" alignItems="flex-end" justifyContent="center">
+        <Box width={["100%", null, "50%"]} p={["20px", null, "32px"]} display="flex" alignItems="flex-end" justifyContent="center">
           <Box width="100%" maxWidth="750px" pb="48px">
             <Box as="h1" fontSize="40px" fontFamily="SangBleu Republic Trial">{title}</Box>
             <Box as="p" fontWeight="300" fontSize="16px" lineHeight="20px" maxWidth="600px" pt="12px" pb="20px">{description}</Box>
@@ -104,7 +103,9 @@ const Project = ({ pageData }) => {
           </Box>
         </Box>
       </Box>
-      {/* <Footer /> */}
+      <Box display={["block", null, "none"]}>
+        <Footer />
+      </Box>
     </Box>
   )
 }
