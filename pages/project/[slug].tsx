@@ -73,13 +73,24 @@ const Project = ({ pageData }) => {
         </CloseLink>
       </Box>
       <Box width="100%" display="flex" height={["auto", null, "100vh"]} as="main" mb="100px" flexWrap="wrap">
-        <Box width={["100%", null, "50%"]} position="relative" height={["auto", null, "100%"]} overflow="scroll" style={{ whiteSpace: 'nowrap'}}>
+        <Box 
+          width={["100%", null, "50%"]} 
+          position="relative" 
+          height={["auto", null, "100%"]} 
+          overflow="scroll" 
+          style={{ whiteSpace: 'nowrap', scrollSnapType: 'x mandatory'}}>
           {images.map(image => {
             const url = urlFor(image.image).auto('format').url();
             const lqip = image.metadata.lqip;
             const dimensions = getImageDimensions(image.image);
             return (
-              <Box display={["inline-block", null, "block"]} width="100%" height="0" pb={["80%", null, `${100 * (dimensions.height / dimensions.width)}%`]} position="relative" style={{ willChange: 'auto'}}>
+              <Box 
+                display={["inline-block", null, "block"]} 
+                width="100%" height="0" 
+                pb={["80%", null, `${100 * (dimensions.height / dimensions.width)}%`]} 
+                position="relative" 
+                style={{ willChange: 'auto', scrollSnapAlign: 'start' }}
+              >
                 <Image layout="fill" src={url} objectFit="cover" placeholder="blur" blurDataURL={lqip} />
               </Box>
             )
