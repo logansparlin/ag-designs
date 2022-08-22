@@ -6,7 +6,19 @@ export async function getHomePage() {
         *[_type == "homePage"][0] {
             title,
             "projects": *[_type == "project"] {
-                ...
+                _key,
+                _id,
+                slug,
+                title,
+                description,
+                images[] {
+                    ...,
+                    "metadata": image.asset->metadata,
+                },
+                location,
+                clientType,
+                scope,
+                services
             }
         }
     `
@@ -26,7 +38,8 @@ export async function getProject(slug: string) {
             title,
             description,
             images[] {
-                ...
+                ...,
+                "metadata": image.asset->metadata,
             },
             location,
             clientType,

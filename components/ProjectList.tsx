@@ -29,7 +29,7 @@ const StyledCard = styled.div`
     transition: filter 250ms ease-in-out;
   }
   &:hover img {
-    filter: brightness(0.4) contrast(1.05) saturate(0.8);
+    filter: brightness(0.4) contrast(1.05) saturate(0.8) !important;
     transition: filter 250ms ease-in-out;
   }
   &:hover ${StyledOverlay} {
@@ -42,12 +42,14 @@ const ProjectList = ({ projects }) => {
   return (
     <Box display="grid" gridGap={["48px", null, "32px"]} gridTemplateColumns={["repeat(1, 1fr)", null, "repeat(3, 1fr)"]} py={["48px", null, "100px"]}>
       {projects.map(project => {
+        console.log(project.images)
         const url = urlFor(project.images[0].image).auto('format').url();
+        const lqip = project.images[0].metadata.lqip;
         return (
           <Box key={project._id} as="a" cursor="pointer" href={`/project/${project.slug.current}`}>
             <StyledCard>
               <Box width="100%" height="0" pb="70%" position="relative" bg="#222">
-                <Image src={url} layout="fill" objectFit="cover" priority />
+                <Image src={url} layout="fill" objectFit="cover" priority placeholder="blur" blurDataURL={lqip} />
               </Box>
               <StyledOverlay>
                 <Box textAlign="center" display={["flex", null, "block"]} justifyContent="space-between" width="100%">

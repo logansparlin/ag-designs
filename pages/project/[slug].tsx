@@ -1,6 +1,7 @@
 import { getProject, getProjectPaths } from "@lib/api";
 import { urlFor } from "@lib/sanity";
 import styled from 'styled-components';
+import { getImageDimensions } from '@sanity/asset-utils';
 
 import { Box } from "@components/box";
 import Header from "@components/Header";
@@ -72,11 +73,21 @@ const Project = ({ pageData }) => {
         </CloseLink>
       </Box>
       <Box width="100%" display="flex" height="100vh" as="main" mb="100px" flexWrap="wrap">
-        <Box width="50%" position="relative">
-          <Image layout="fill" src={urlFor(images[1].image).url()} objectFit="cover" />
+        <Box width="50%" position="relative" height="100%" overflow="scroll">
+          {images.map(image => {
+            const url = urlFor(image.image).auto('format').url();
+            const lqip = image.metadata.lqip;
+            const dimensions = getImageDimensions(image.image);
+            console.log(dimensions)
+            return (
+              <Box width="100%" height="0" pb={`${100 * (dimensions.height / dimensions.width)}%`} position="relative" style={{ willChange: 'auto'}}>
+                <Image layout="fill" src={url} objectFit="cover" placeholder="blur" blurDataURL={lqip} />
+              </Box>
+            )
+          })}
         </Box>
         <Box width="50%" p={["20px", null, "32px"]} display="flex" alignItems="flex-end" justifyContent="center">
-          <Box width="100%" maxWidth="750px" pb="10%">
+          <Box width="100%" maxWidth="750px" pb="48px">
             <Box as="h1" fontSize="40px" fontFamily="SangBleu Republic Trial">{title}</Box>
             <Box as="p" fontWeight="300" fontSize="16px" lineHeight="20px" maxWidth="600px" pt="12px" pb="20px">{description}</Box>
             <Box width="100%">
