@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import { Box } from "./box";
 import Image from 'next/image';
+import ProjectListImages from "./ProjectListImages";
+import { StyledIcon } from "./ProjectListImages";
 
 const StyledOverlay = styled.div`
   position: absolute;
@@ -25,6 +27,10 @@ const StyledOverlay = styled.div`
 
 const StyledCard = styled.div`
   position: relative;
+  ${StyledIcon} {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+  }
   img {
     transition: filter 250ms ease-in-out;
   }
@@ -33,6 +39,10 @@ const StyledCard = styled.div`
     transition: filter 250ms ease-in-out;
   }
   &:hover ${StyledOverlay} {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+  }
+  &:hover ${StyledIcon} {
     opacity: 1;
     transition: opacity 250ms ease-in-out;
   }
@@ -48,7 +58,7 @@ const ProjectList = ({ projects }) => {
           <Box key={project._id} as="a" cursor="pointer" href={`/project/${project.slug.current}`}>
             <StyledCard>
               <Box width="100%" height="0" pb="70%" position="relative" bg="#222">
-                <Image src={url} layout="fill" objectFit="cover" priority placeholder="blur" blurDataURL={lqip} />
+                <ProjectListImages images={project.images} />
               </Box>
               <StyledOverlay>
                 <Box textAlign="center" display={["flex", null, "block"]} justifyContent="space-between" width="100%">
