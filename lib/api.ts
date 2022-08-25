@@ -34,6 +34,7 @@ export async function getHomePage() {
 }
 
 export async function getProject(slug: string) {
+    console.log(slug)
     const query = groq`
         *[_type == "project" && slug.current match '${slug}'][0] {
             slug,

@@ -63,6 +63,7 @@ const CloseLink = styled.div`
 `;
 
 const Project = ({ pageData }) => {
+  if(!pageData) return <div>No Page Data</div>;
   const { title, description, images, location, clientType, scope, services } = pageData;
   return (
     <Box>
