@@ -12,9 +12,16 @@ export default {
             type: 'string'
         },
         {
-            name: 'body',
-            title: 'Body',
-            type: 'blockContent'
+            name: 'process',
+            title: 'Our Process',
+            type: 'array',
+            of: [{ type: 'string' }]
+        },
+        {
+            name: 'services',
+            title: 'Our Services',
+            type: 'array',
+            of: [{ type: 'string' }]
         }
     ]
 }
