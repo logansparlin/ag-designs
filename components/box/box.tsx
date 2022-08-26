@@ -48,6 +48,7 @@ const Box = styled.div<Props>`
     ${system};
     text-transform: ${(props) => props.textTransform};
     cursor: ${(props) => props.cursor};
+    transform: ${(props) => props.transform};
 `;
 
 export default Box;

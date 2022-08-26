@@ -46,6 +46,11 @@ const StyledCard = styled.div`
     opacity: 1;
     transition: opacity 250ms ease-in-out;
   }
+  @media only screen and (max-width: 768px) {
+    &:hover img {
+      filter: brightness(0.9) !important;
+    }
+  }
 `;
 
 const ProjectList = ({ projects }) => {

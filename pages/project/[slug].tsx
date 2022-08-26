@@ -53,13 +53,15 @@ const LabelValue = ({ label, value }) => {
   )
 }
 
-const CloseLink = styled.div`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 32px;
+const CloseLink = styled(Box)`
+  font-size: 20px;
   font-family: SangBleuRepublic;
   font-style: italic;
+  cursor: pointer;
+  a {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+
+  }
 `;
 
 const Project = ({ pageData }) => {
@@ -69,9 +71,6 @@ const Project = ({ pageData }) => {
     <Box>
       <Box position="absolute" width="100%" top="0" left="0" zIndex="100" p={["20px", null, "32px"]}>
         <Header />
-        <CloseLink>
-          <Link href="/">+ Close Project</Link>
-        </CloseLink>
       </Box>
       <Box width="100%" display="flex" height={["auto", null, "100vh"]} as="main" mb="100px" flexWrap="wrap">
         <Box 
@@ -96,6 +95,15 @@ const Project = ({ pageData }) => {
               </Box>
             )
           })}
+        </Box>
+        <Box textAlign="center" width="100%">
+          <CloseLink position={['relative', null, 'absolute']} left={["0px", null, "32px"]} bottom={["-12px", null, "32px"]}>
+            <Link href="/">
+              <Box>
+                <Box as="span" display="inline-block" transform="rotate(45deg)">+</Box> Close Project
+              </Box>
+            </Link>
+          </CloseLink>
         </Box>
         <Box width={["100%", null, "50%"]} p={["20px", null, "32px"]} display="flex" alignItems="flex-end" justifyContent="center" pt={["48px", null, "32px"]}>
           <Box width="100%" maxWidth="750px" pb="48px">
