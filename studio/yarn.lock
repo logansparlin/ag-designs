@@ -1853,7 +1853,7 @@
     "@types/lodash" "^4.14.149"
     lodash "^4.17.15"
 
-"@sanity/types@2.31.0":
+"@sanity/types@2.31.0", "@sanity/types@^2.31.0":
   version "2.31.0"
   resolved "https://registry.npmjs.org/@sanity/types/-/types-2.31.0.tgz#31964058e52cb5fafd5939635c8062563ae4ace2"
   integrity sha512-2CmVMkZMwvG8vuCZtVfz++C/0SIhRUkUym4pKEyOhLjmJJjmHj9c2FW56gUqiMB6Mr2B//i0ICrCa3DyllXIug==
