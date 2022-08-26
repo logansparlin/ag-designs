@@ -14,7 +14,7 @@ const Footer = () => {
       <Divider />
       <Box p={["20px", null, "32px"]} display="flex" justifyContent="space-between" fontSize={["14px", null, "20px"]}>
         <Box>
-          Based in <Box as="span" fontFamily="SangBleu Republic Trial" fontStyle="italic">New York</Box>
+          Based in <Box as="span" fontFamily="SangBleuRepublic" fontStyle="italic">New York</Box>
         </Box>
         <Box>&copy; {new Date().getFullYear()} – All Rights Reserved</Box>
       </Box>

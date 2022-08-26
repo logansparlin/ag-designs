@@ -63,7 +63,7 @@ const ProjectList = ({ projects }) => {
               <StyledOverlay>
                 <Box textAlign="center" display={["flex", null, "block"]} justifyContent="space-between" width="100%">
                   <Box fontSize={["16px", null, "32px"]} fontWeight={["400", null, "300"]}>{project.title}</Box>
-                  <Box opacity={["0.6", null, "1"]} fontSize="16px" pt={["0", null, "8px"]} fontFamily={["inherit", null, "SangBleu Republic Trial"]} fontStyle={["regular", null, "italic"]}>{project.location}</Box>
+                  <Box opacity={["0.6", null, "1"]} fontSize="16px" pt={["0", null, "8px"]} fontFamily={["inherit", null, "SangBleuRepublic"]} fontStyle={["regular", null, "italic"]}>{project.location}</Box>
                 </Box>
               </StyledOverlay>
             </StyledCard>

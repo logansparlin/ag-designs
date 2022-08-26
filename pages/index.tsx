@@ -34,14 +34,14 @@ const Home = ({ data }): JSX.Element => {
       <Box p={["20px", null, "32px"]}  as="main">
         <HomeHead />
         <Header />
-        <Box as="h1" fontSize={["32px", null, "64px"]} lineHeight={["38px", null, "68px"]} pt={["48px", null, "100px"]} fontWeight="500" maxWidth="780px">{title}</Box>
+        <Box as="h1" fontSize={["32px", null, "64px"]} lineHeight={["38px", null, "68px"]} pt={["48px", null, "100px"]} fontWeight="400" maxWidth="800px">{title}</Box>
         <ProjectList projects={projects} />
         <Box display="flex" justifyContent="space-between" pb="100px" flexWrap="wrap" pt={["40px", null, "0"]}>
           <Box width={["100%", null, "48%"]}>
             <Box
               as="h2"
               fontSize={["24px", null, "28px"]}
-              fontWeight="500"
+              fontWeight="400"
               lineHeight="40px"
               pb={["24px", null, "40px"]}
               textTransform="uppercase"
@@ -74,7 +74,7 @@ const Home = ({ data }): JSX.Element => {
             <Box
               as="h2"
               fontSize={["24px", null, "28px"]}
-              fontWeight="500"
+              fontWeight="400"
               lineHeight="40px"
               pb={["24px", null, "40px"]}
               textTransform="uppercase"

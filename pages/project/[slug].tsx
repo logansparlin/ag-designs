@@ -21,7 +21,7 @@ const Label = ({ children }) => (
 
 const Value = ({ children, withPadding = false }) => (
   <Box 
-    fontFamily="SangBleu Republic Trial" 
+    fontFamily="SangBleuRepublic" 
     fontSize="18px" 
     lineHeight="23px"
     fontStyle="italic"
@@ -58,7 +58,7 @@ const CloseLink = styled.div`
   left: 50%;
   transform: translateX(-50%);
   top: 32px;
-  font-family: SangBleu Republic Trial;
+  font-family: SangBleuRepublic;
   font-style: italic;
 `;
 
@@ -99,7 +99,7 @@ const Project = ({ pageData }) => {
         </Box>
         <Box width={["100%", null, "50%"]} p={["20px", null, "32px"]} display="flex" alignItems="flex-end" justifyContent="center" pt={["48px", null, "32px"]}>
           <Box width="100%" maxWidth="750px" pb="48px">
-            <Box as="h1" fontSize="40px" fontFamily="SangBleu Republic Trial">{title}</Box>
+            <Box as="h1" fontSize="40px" fontFamily="SangBleuRepublic">{title}</Box>
             <Box as="p" fontWeight="300" fontSize="16px" lineHeight="20px" maxWidth="600px" pt="12px" pb="20px">{description}</Box>
             <Box width="100%">
               <Divider />
