@@ -15,6 +15,16 @@ const Structure = () => (
                         .schemaType('homePage')
                 )
                 .icon(BiHomeAlt),
+            S.listItem()
+                .title('FAQ')
+                .child(
+                    S.document()
+                        .title('FAQ Page')
+                        .id('faqPage')
+                        .documentId('faqPage')
+                        .schemaType('faqPage')
+                )
+                .icon(BiHomeAlt),
             S.divider(),
             S.listItem()
                 .title('Projects')

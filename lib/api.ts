@@ -33,6 +33,22 @@ export async function getHomePage() {
     }
 }
 
+export async function getFAQPage() {
+    const query = groq`
+        *[_type == "faqPage"][0] {
+            title,
+            items
+        }
+    `
+
+    const data = await sanityClient.fetch(query);
+    
+    return {
+        data,
+        query
+    }
+}
+
 export async function getProject(slug: string) {
     console.log(slug)
     const query = groq`

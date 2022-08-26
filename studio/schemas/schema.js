@@ -8,10 +8,12 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import homePage from './documents/homePage';
 import page from './documents/page';
 import project from './documents/project';
+import faqPage from './documents/faqPage';
 
 // Objects
 import blockContent from './objects/blockContent';
 import imageWithAlt from './objects/imageWithAlt';
+import faqItem from './objects/faqItem';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,9 +26,11 @@ export default createSchema({
     homePage,
     page,
     project,
+    faqPage,
 
     // Objects
     blockContent,
     imageWithAlt,
+    faqItem,
   ])
 });
