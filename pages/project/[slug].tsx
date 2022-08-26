@@ -109,7 +109,7 @@ const Project = ({ pageData }) => {
               <Divider />
               <LabelValue label="Scope:" value={scope} />
               <Divider />
-              <LabelValue label="Resources:" value={services} />
+              <LabelValue label="Services:" value={services} />
               <Divider />
             </Box>
           </Box>
