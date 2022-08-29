@@ -51,7 +51,7 @@ const FAQItem = ({ question, answer, activeKey, handleClick, currentKey }) => {
           <Box as="span" pr="14px">Q:</Box>
           {question}
         </Box>
-        <Box display={["none", null, "block"]} as="button" fontSize="20px" textTransform="uppercase">{currentKey === activeKey ? 'Collapse' : 'Expand'}</Box>
+        <Box display={["none", null, "block"]} fontSize="20px" textTransform="uppercase">{currentKey === activeKey ? 'Collapse' : 'Expand'}</Box>
       </Question>
       {currentKey === activeKey && 
         <Box display="flex" pl={["8px", null, "12px"]} py="12px" pt="32px" maxWidth="800px" fontSize={["16px", null, "24px"]}>
