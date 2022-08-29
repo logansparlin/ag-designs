@@ -74,7 +74,7 @@ const Project = ({ pageData }) => {
       </Box>
       <Box width="100%" display="flex" height={["auto", null, "100vh"]} as="main" mb="100px" flexWrap="wrap">
         <Box 
-          width={["100%", null, "50%"]} 
+          width={["100%", null, "50%"]}
           position="relative" 
           height={["auto", null, "100%"]} 
           overflow="scroll" 
@@ -96,8 +96,8 @@ const Project = ({ pageData }) => {
             )
           })}
         </Box>
-        <Box textAlign="center" width="100%">
-          <CloseLink position={['relative', null, 'absolute']} left={["0px", null, "32px"]} bottom={["-12px", null, "32px"]}>
+        <Box textAlign={["center", null, "right"]} width="100%" position={['relative', null, 'absolute']} right={["0px", null, "32px"]} bottom={["-12px", null, "32px"]}>
+          <CloseLink>
             <Link href="/">
               <Box>
                 <Box as="span" display="inline-block" transform="rotate(45deg)">+</Box> Close Project
