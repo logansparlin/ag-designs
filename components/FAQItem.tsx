@@ -47,15 +47,15 @@ const FAQItem = ({ question, answer, activeKey, handleClick, currentKey }) => {
   return (
     <Box fontWeight="300" pb="48px">
       <Question as="button" width="100%" display="flex" justifyContent="space-between" borderTop="1px solid #f2f2f2" py="16px" pb="0" onClick={() => handleClick(currentKey)}>
-        <Box as="h2" fontSize="32px" maxWidth="800px" display="flex">
+        <Box as="h2" fontSize={["20px", null, "32px"]} maxWidth="800px" display="flex">
           <Box as="span" pr="14px">Q:</Box>
           {question}
         </Box>
-        <Box as="button" fontSize="20px" textTransform="uppercase">{currentKey === activeKey ? 'Collapse' : 'Expand'}</Box>
+        <Box display={["none", null, "block"]} as="button" fontSize="20px" textTransform="uppercase">{currentKey === activeKey ? 'Collapse' : 'Expand'}</Box>
       </Question>
       {currentKey === activeKey && 
-        <Box display="flex" pl="12px" py="12px" pt="32px" maxWidth="800px" fontSize="24px">
-          <Box as="span" pr="20px">A:</Box>
+        <Box display="flex" pl={["8px", null, "12px"]} py="12px" pt="32px" maxWidth="800px" fontSize={["16px", null, "24px"]}>
+          <Box as="span" pr={["16px", null, "20px"]}>A:</Box>
           <Answer>
             <PortableText blocks={answer} />
           </Answer>
