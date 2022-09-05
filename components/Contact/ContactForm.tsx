@@ -65,15 +65,15 @@ function ContactForm({
     <Box
       py="40px"
       px={["20px", null, "32px"]}
-      display={["block", null, "grid"]}
       width="100%"
       height={["100%", null, "auto"]}
       fontFamily="IIIncrementsSans"
       overflow="scroll"
-      gridTemplateColumns={["1fr", "3fr 2fr", null, "4fr 3fr"]}
-      gridGap={["100", null, "300", "800"]}
+      display={["block", null, "flex"]}
+      justifyContent="center"
+      alignItems="center"
     >
-      <Box>
+      <Box width="100%" maxWidth="900px">
         <Box as="h3" fontSize={["16px", "20px", null, "32px"]} py="12px">
           Get in Touch
         </Box>

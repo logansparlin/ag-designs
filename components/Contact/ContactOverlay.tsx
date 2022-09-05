@@ -33,8 +33,8 @@ const StyledBackdrop = styled(motion.div)`
   top: 0;
   left: 0;
   z-index: 3;
-  backdrop-filter: blur(20px) brightness(30%);
-  webkit-backdrop-filter: blur(20px) brightness(30%);
+  backdrop-filter: blur(20px) brightness(80%);
+  webkit-backdrop-filter: blur(20px) brightness(80%);
   pointer-events: none;
   user-select: none;
 `;
