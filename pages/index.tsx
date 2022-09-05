@@ -6,6 +6,7 @@ import { Box } from '@components/box';
 import ProjectList from '@components/ProjectList';
 import Footer from '@components/Footer';
 import Header from '@components/Header';
+import { ContactOverlay } from '@components/Contact/ContactOverlay';
 
 const HomeHead = () => (
   <Head>
@@ -18,7 +19,7 @@ const HomeHead = () => (
 const Home = ({ data }): JSX.Element => {
   const { pageData = {} } = data;
 
-  if(!pageData) {
+  if (!pageData) {
     return (
       <div>
         <HomeHead />
@@ -28,13 +29,14 @@ const Home = ({ data }): JSX.Element => {
   }
 
   const { title, projects, process, services } = pageData;
-  
+
   return (
     <Box>
-      <Box p={["20px", null, "32px"]}  as="main">
+      <Box p={["20px", null, "32px"]} as="main">
         <HomeHead />
+        <ContactOverlay />
         <Header />
-        <Box as="h1" fontSize={["32px", null, "64px"]} lineHeight={["38px", null, "68px"]} pt={["48px", null, "100px"]} fontWeight="400" maxWidth="800px">{title}</Box>
+        <Box as="h1" fontSize={["32px", null, "64px"]} lineHeight={["38px", null, "68px"]} pt={["80px", null, "100px"]} fontWeight="400" maxWidth="800px">{title}</Box>
         <ProjectList projects={projects} />
         <Box display="flex" justifyContent="space-between" pb="100px" flexWrap="wrap" pt={["40px", null, "0"]}>
           <Box width={["100%", null, "48%"]}>
@@ -55,7 +57,7 @@ const Home = ({ data }): JSX.Element => {
                     <Box width="24px" height="24px" border="1px solid #f2f2f2" borderRadius="100px" display="flex" alignItems="center" justifyContent="center">
                       <Box as="span">{`${index + 1}`}</Box>
                     </Box>
-                    <Box 
+                    <Box
                       flex="1"
                       fontSize={["20px", null, "24px"]}
                       fontWeight="300"
