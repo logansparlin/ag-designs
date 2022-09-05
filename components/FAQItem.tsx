@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { PortableText } from "@lib/sanity";
 import { Box } from "./box";
 
-const Answer = styled(Box)`
-  
+const Answer = styled(motion(Box))`
+  position: relative;
 `;
 
 const Question = styled(Box)`
@@ -44,6 +45,8 @@ const Question = styled(Box)`
 
 
 const FAQItem = ({ question, answer, activeKey, handleClick, currentKey }) => {
+  const answerRef = useRef(null);
+
   return (
     <Box fontWeight="300" pb="48px">
       <Question as="button" width="100%" display="flex" justifyContent="space-between" borderTop="1px solid #f2f2f2" py="16px" pb="0" onClick={() => handleClick(currentKey)}>
@@ -53,14 +56,30 @@ const FAQItem = ({ question, answer, activeKey, handleClick, currentKey }) => {
         </Box>
         <Box display={["none", null, "block"]} fontSize="20px" textTransform="uppercase">{currentKey === activeKey ? 'Collapse' : 'Expand'}</Box>
       </Question>
-      {currentKey === activeKey && 
-        <Box display="flex" pl={["8px", null, "12px"]} py="12px" pt="32px" maxWidth="800px" fontSize={["16px", null, "24px"]}>
+      <Answer
+        height="0"
+        overflow="hidden"
+        initial={{ height: 0 }}
+        animate={{ height: currentKey === activeKey ? answerRef.current.scrollHeight : 0 }}
+        transition={{
+          duration: 0.5
+        }}
+      >
+        <Box
+          ref={answerRef}
+          display="flex"
+          pl={["8px", null, "12px"]}
+          py="12px"
+          pt="32px"
+          maxWidth="800px"
+          fontSize={["16px", null, "24px"]}
+        >
           <Box as="span" pr={["16px", null, "20px"]}>A:</Box>
-          <Answer>
+          <Box>
             <PortableText blocks={answer} />
-          </Answer>
+          </Box>
         </Box>
-      }
+      </Answer>
     </Box>
   )
 }
