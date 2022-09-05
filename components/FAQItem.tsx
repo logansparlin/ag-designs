@@ -22,7 +22,7 @@ const Question = styled(Box)`
   text-align: left;
   cursor: pointer;
 
-  button {
+  .expand {
     appearance: none;
     border: none;
     outline: none;
@@ -36,7 +36,7 @@ const Question = styled(Box)`
   }
 
   &:hover, &:active {
-    button {
+    .expand {
       opacity: 0.5;
       transition: opacity 150ms ease-in-out;
     }
@@ -54,7 +54,7 @@ const FAQItem = ({ question, answer, activeKey, handleClick, currentKey }) => {
           <Box as="span" pr="14px">Q:</Box>
           {question}
         </Box>
-        <Box display={["none", null, "block"]} fontSize="20px" textTransform="uppercase">{currentKey === activeKey ? 'Collapse' : 'Expand'}</Box>
+        <Box className="expand" display={["none", null, "block"]} fontSize="20px" textTransform="uppercase">{currentKey === activeKey ? 'Collapse' : 'Expand'}</Box>
       </Question>
       <Answer
         height="0"
