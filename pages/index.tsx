@@ -12,7 +12,7 @@ const HomeHead = () => (
   <Head>
     <title>AG Designs</title>
     <meta name="description" content="AG Designs" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.png" />
   </Head>
 )
 
