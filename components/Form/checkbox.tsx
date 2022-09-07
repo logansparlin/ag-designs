@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Box, BoxProps } from "@components/box";
+import { Box } from "@components/box";
 
-interface InputProps extends BoxProps {
+interface InputProps {
   name: string;
   value: string;
   checked?: boolean;

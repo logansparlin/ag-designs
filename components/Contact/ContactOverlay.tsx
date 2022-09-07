@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import css from '@styled-system/css'
 
 import { useAppStore } from "@hooks/useAppStore";
-import { Box } from "@components/box";
 import ContactForm from "./ContactForm";
 
 const StyledOverlay = styled(motion.div)`
