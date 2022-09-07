@@ -65,6 +65,7 @@ function ContactForm({
     <Box
       py="40px"
       px={["20px", null, "32px"]}
+      pt={["48px", null, "32px"]}
       width="100%"
       height={["100%", null, "auto"]}
       fontFamily="IIIncrementsSans"
