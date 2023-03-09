@@ -8,7 +8,7 @@ const Header = () => {
   const { setContactOpen, contactOpen } = useAppStore();
 
   return (
-    <Box as="header" position="absolute" width="100%" display="flex" justifyContent="space-between" left="0" top="0" p={["20px", null, "32px"]} zIndex={10}>
+    <Box as="header" position="absolute" width="100%" display="flex" justifyContent="space-between" left="0" top="0" p={["20px", null, "32px"]} zIndex={100}>
       <Box fontSize="20px" textTransform="uppercase">
         <Link href="/">AG Designs</Link>
       </Box>

@@ -5,17 +5,19 @@ import { Box } from "@components/box"
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import FAQItem from "@components/FAQItem";
+import { ContactOverlay } from "@components/Contact/ContactOverlay";
 
 const FAQ = ({ pageData }) => {
   const { title, items } = pageData;
   const [expanded, setExpanded] = useState<string | null>(null);
 
   const toggleExpanded = (key) => {
-    if(key === expanded) return setExpanded(null);
+    if (key === expanded) return setExpanded(null);
     return setExpanded(key);
   }
   return (
     <Box>
+      <ContactOverlay />
       <Box p={["20px", null, "32px"]}>
         <Header />
       </Box>

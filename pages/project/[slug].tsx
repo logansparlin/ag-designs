@@ -8,6 +8,7 @@ import Header from "@components/Header";
 import Image from 'next/image';
 import Footer from "@components/Footer";
 import Link from 'next/link';
+import { ContactOverlay } from "@components/Contact/ContactOverlay";
 
 const Divider = () => (
   <Box py="12px">
@@ -20,9 +21,9 @@ const Label = ({ children }) => (
 );
 
 const Value = ({ children, withPadding = false }) => (
-  <Box 
-    fontFamily="SangBleuRepublic" 
-    fontSize="18px" 
+  <Box
+    fontFamily="SangBleuRepublic"
+    fontSize="18px"
     lineHeight="23px"
     fontStyle="italic"
     fontWeight="100"
@@ -33,7 +34,7 @@ const Value = ({ children, withPadding = false }) => (
 );
 
 const LabelValue = ({ label, value }) => {
-  if(Array.isArray(value)) {
+  if (Array.isArray(value)) {
     return (
       <Box width="100%" display="flex">
         <Label>{label}</Label>
@@ -65,30 +66,31 @@ const CloseLink = styled(Box)`
 `;
 
 const Project = ({ pageData }) => {
-  if(!pageData) return <div>No Page Data</div>;
+  if (!pageData) return <div>No Page Data</div>;
   const { title, description, images, location, clientType, scope, services } = pageData;
   return (
     <Box>
+      <ContactOverlay />
       <Box position="absolute" width="100%" top="0" left="0" zIndex="100" p={["20px", null, "32px"]}>
         <Header />
       </Box>
       <Box width="100%" display="flex" height={["auto", null, "100vh"]} as="main" mb="100px" flexWrap="wrap">
-        <Box 
+        <Box
           width={["100%", null, "50%"]}
-          position="relative" 
-          height={["auto", null, "100%"]} 
-          overflow="scroll" 
-          style={{ whiteSpace: 'nowrap', scrollSnapType: 'x mandatory'}}>
+          position="relative"
+          height={["auto", null, "100%"]}
+          overflow="scroll"
+          style={{ whiteSpace: 'nowrap', scrollSnapType: 'x mandatory' }}>
           {images.map(image => {
             const url = urlFor(image.image).auto('format').url();
             const lqip = image.metadata.lqip;
             const dimensions = getImageDimensions(image.image);
             return (
-              <Box 
-                display={["inline-block", null, "block"]} 
-                width="100%" height="0" 
-                pb={["80%", null, `${100 * (dimensions.height / dimensions.width)}%`]} 
-                position="relative" 
+              <Box
+                display={["inline-block", null, "block"]}
+                width="100%" height="0"
+                pb={["80%", null, `${100 * (dimensions.height / dimensions.width)}%`]}
+                position="relative"
                 style={{ willChange: 'auto', scrollSnapAlign: 'start' }}
               >
                 <Image layout="fill" src={url} objectFit="cover" placeholder="blur" blurDataURL={lqip} />

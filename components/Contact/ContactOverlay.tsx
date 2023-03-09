@@ -12,7 +12,7 @@ const StyledOverlay = styled(motion.div)`
   width: 100%;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
-  z-index: 4;
+  z-index: 40;
   display: flex;
   justify-content: center;
   align-items: center;
